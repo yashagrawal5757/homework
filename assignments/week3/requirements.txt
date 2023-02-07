@@ -1,3 +1,4 @@
 torch
 torchvision
 tqdm
+black == 23.1.0
