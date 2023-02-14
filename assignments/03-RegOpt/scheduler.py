@@ -11,6 +11,7 @@ class CustomLRScheduler(_LRScheduler):
         optimizer,
         last_epoch=-1,
     ) -> None:
+        # Dummy text to make it commit
         super(CustomLRScheduler, self).__init__(optimizer, last_epoch)
 
     def get_lr(self) -> list[float]:
