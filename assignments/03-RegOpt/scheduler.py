@@ -1,24 +1,27 @@
-from typing import List
-
 from torch.optim.lr_scheduler import _LRScheduler
 
 
 class CustomLRScheduler(_LRScheduler):
-    def __init__(self, optimizer, last_epoch=-1):
-        """
-        Create a new scheduler.
+    """
+    Implementation of a custom learning rate scheduler
+    """
 
-        Note to students: You can change the arguments to this constructor,
-        if you need to add new parameters.
-
-        """
-        # ... Your Code Here ...
+    def __init__(
+        self,
+        optimizer,
+        last_epoch=-1,
+    ) -> None:
         super(CustomLRScheduler, self).__init__(optimizer, last_epoch)
 
-    def get_lr(self) -> List[float]:
-        # Note to students: You CANNOT change the arguments or return type of
-        # this function (because it is called internally by Torch)
+    def get_lr(self) -> list[float]:
+        """
+        Returns the learning rates generated using the chainable form of the
+        scheduler.
+        """
+        return [group["lr"] for group in self.optimizer.param_groups]
 
-        # ... Your Code Here ...
-        # Here's our dumb baseline implementation:
-        return [i for i in self.base_lrs]
+    def _get_closed_form_lr(self) -> list[float]:
+        """
+        Returns the learning rates generated using the closed form approach.
+        """
+        return self.base_lrs
