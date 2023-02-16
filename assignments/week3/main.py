@@ -30,14 +30,11 @@ _transform_list = [
 def get_mnist_data() -> Tuple[DataLoader, DataLoader]:
     """
     Get the MNIST data from torchvision.
-
     Arguments:
         None
-
     Returns:
         train_loader (DataLoader): The training data loader.
         test_loader (DataLoader): The test data loader.
-
     """
     # Get the training data:
     train_data = MNIST(
@@ -65,7 +62,6 @@ def train(
 ) -> None:
     """
     Train a model on the MNIST data.
-
     Arguments:
         model (torch.nn.Module): The model to train.
         train_loader (DataLoader): The training data loader.
@@ -73,10 +69,8 @@ def train(
         num_epochs (int): The number of epochs to train for.
         learning_rate (float): The learning rate to use.
         device (torch.device): The device to use for training.
-
     Returns:
         None
-
     """
     # Create an optimizer:
     optimizer = Adam(model.parameters(), lr=learning_rate)

@@ -13,7 +13,6 @@ def test_has_correct_attributes():
 def test_fn_signatures():
     """
     Disallow untyped signatures.
-
     """
     from inspect import signature
 
@@ -35,7 +34,6 @@ def test_fn_signatures():
 def test_docstrings():
     """
     Disallow missing docstrings.
-
     """
     lr = MLP(1, 1, 1)
     # all methods must have a docstring.

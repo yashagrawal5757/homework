@@ -1,10 +1,8 @@
 """
 Unittests for linear regression.
-
 Test that the linear regression from `model.py` works. Remember that this is
 only a subset of the unittests that will run on your code; the instructors have
 a holdout test suite that will be used to evaluate your code.
-
 """
 
 import inspect
@@ -33,7 +31,6 @@ def test_has_correct_attributes(model):
 def test_fn_signatures(model):
     """
     Disallow untyped signatures.
-
     """
     from inspect import signature
 
@@ -56,7 +53,6 @@ def test_fn_signatures(model):
 def test_docstrings(model):
     """
     Disallow missing docstrings.
-
     """
     lr = model()
     # all methods must have a docstring.
