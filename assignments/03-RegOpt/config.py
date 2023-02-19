@@ -5,11 +5,7 @@ import torch.nn as nn
 from torchvision.transforms import (
     Compose,
     Normalize,
-    ToTensor,
-    RandomCrop,
-    RandomHorizontalFlip,
-    RandomRotation,
-    ColorJitter,
+    ToTensor
 )
 
 
